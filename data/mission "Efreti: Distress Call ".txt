@@ -1,0 +1,29 @@
+mission "Efreti: Distress Call 1"
+	name "Investigate distress call"
+	description "The Quarg have asked you investigate a distress call in <destination>."
+	source "Karek Fornati"
+	waypoint "Seleptra Nak"
+	destination "Laki Nemparu"
+	landing
+	conversation
+		`The blue flash of Quarg ships is nothing new as you travel Efreti space. Usually that is all you see of the enigmatic Quarg. Today, however, you receive an urgent hail as you land.`
+		`	"Salutations Captain of the <ship>. Your most diligent efforts are required lest many families mourn the dead. An Efreti ship was surveying <destination> when surprised by Mereti they were. Their ship crashed on the planet with many dead and they have asked for help to evacuate.`
+		choice
+			"I'll go there immediately."
+				accept
+			"Can't the Quarg respond?"
+				goto Quarg
+			"I don't care about the Korath."
+				goto careless
+		label Quarg
+		`	We fought off the Mereti that attacked them but they had crashed before we could reach them. The gravity on their world requires us to have special equipment and environment suits to navigate wreckage in high gravity. A Human would have few problems.`
+		label careless
+		`	The Quarg is silent for some time. Eventually he responds, "Life is rare and precious across the vastness of space. Look about the Korath worlds and see what remains when one cares not what others suffer."`
+			decline
+
+	on waypoint
+		conversation
+		`	It takes you some time to find the wreckage. You had expected a beacon of some sort but they are either keeping radio silence to avoid drawing the Mereti or there were no survivors.`
+		`	When you manage to open the hatch, you find yourself staring down a thermal rifle. The Korath shouts something at you and you hold your hands out palms forward. He retreats a few steps but keeps the weapon trained on you. You slowly pull your communicator our and play you ship's recording of the Quarg transmission. When the Korath hears the Quarg's voice they become excited. "Laki Nemparu?" he asks repeatedly. You nod your head and show your palms again.`
+		`	He leads you into the ship, shouting into a communication device that is then picked up on speakers throughout the ship. You can only glance around as you move through the engineering section but it's clear their System Core was destroyed and left them stranded.`
+	on complete
