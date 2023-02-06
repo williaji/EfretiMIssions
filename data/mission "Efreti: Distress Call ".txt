@@ -35,3 +35,42 @@ mission "Efreti: Distress Call 1"
 		`	The Efreti commander hails the authorities once you enter the system and they have medical crews waiting when you land. It takes several hours to evacute the injured as doctors or paramedics swarm over them to triage, treat, and prepare for transport. The three who died during the flight are treated with respect and carried off the <ship>.`
 		`	When you make it to the spaceport you find a message from the Quarg. "Bold Human! With profuse thanks we offer you for helping the standed Korath when we could not. The Korath ever mourn the loss of their worlds and from time to time brave the dangers to seek what the can salvage among the ruins and to seek out those where they may one day live again. For the young, this gives them hope, but sometimes they are caught and the Efreti are reminded why they live crushed together in these few worlds."`
 		`	Your communicator notifies you of a payment of <payment>.`
+
+
+
+mission "Efreti: Distress Call 2"
+	name "Recover the fallen"
+	description "Recover the bodies of the dead Korath on <waypoint> and return them to <destination>."
+	source "Laki Nemparu"
+	waypoint "Seleptra Nak"
+	destination "Karek Fornati"
+	landing
+
+	to offer
+		has "Efreti: Distress Call 1: complete"
+
+	on offer
+	conversation
+		`A delgation of Korath approach you somewhat hesitantly in the spaceport. They are dressed in what appears to be much finer clothing that most of the Korath you have met. Certiainly nothing you would wear to do work in spaceport. As they make the traditional gesture of greeting, which you return, you are curious both as to what they want and how they will ask.`
+		`	One of them takes a small case out of a pocket and take out a black device that looks like three triangles hooked together. He hisses at it for a moment and then it rises out of his hand. The air around it begins to shimmer and soon a life size hologram of a Quarg appears.`
+		`	"Salutations, far traveller," the Quarg rumbles. "These Korath-Friends are the princes of the clan-company that you have assisted. They thank you for your aid in saving their children and grandchildren. While  most grateful they are for the living, they cannot fully mourn the dead who lie on <waypoint>. They ask me to ask that you travel there and bring their lost ones home to <destination>."`
+		choice
+			`	"I will bring them home."`
+				goto home
+			`	"I will if they pay me."`
+				goto pay
+			`	"I won't risk my ship for the dead."`
+				goto refuse
+
+		label home
+		`	You hadn't realised how tense the group was until you saw them relax as your words reach them. The seem relieved at your answer.`
+
+		label refuse
+		`	You see the leader of the group visibly sag as the Quarg translates your words. Two younger Korath bear him up as the group turns and leaves.`
+			decline
+
+		label pay
+		`	A ripple of what appears to be dissatisfaction passes through the group, but their leader silences them with a gesture.`
+
+		`	The leader of the turns and speaks to you directly. His eyes never waver from yours even as you wait for the translation. "Many ship skills work father-son to learn. For some families, three generations are lost. We will not try to salvage the body box of our kin, for none can bear to fly it. We offer you title to salvage it and carry our grief far from here."`
+			accept
