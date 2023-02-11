@@ -51,8 +51,8 @@ mission "Efreti: Distress Call 2"
 
 	on offer
 	conversation
-		`A delgation of Korath approach you somewhat hesitantly in the spaceport. They are dressed in what appears to be much finer clothing that most of the Korath you have met. Certiainly nothing you would wear to do work in spaceport. As they make the traditional gesture of greeting, which you return, you are curious both as to what they want and how they will ask.`
-		`	One of them takes a small case out of a pocket and take out a black device that looks like three triangles hooked together. He hisses at it for a moment and then it rises out of his hand. The air around it begins to shimmer and soon a life size hologram of a Quarg appears.`
+		`A delgation of Korath approach you somewhat hesitantly in the spaceport. They are dressed in what appears to be much finer clothing that most of the Korath you have met. Certiainly nothing you would wear to do work in a spaceport. As they make the traditional gesture of greeting, which you return, you are curious both as to what they want and how they will ask.`
+		`	One of them takes a small case out of a pocket and removes a black device that looks like three triangles hooked together. He hisses at it for a moment and then it rises out of his hand. The air around it begins to shimmer and soon a life size hologram of a Quarg appears.`
 		`	"Salutations, far traveller," the Quarg rumbles. "These Korath-Friends are the princes of the clan-company that you have assisted. They thank you for your aid in saving their children and grandchildren. While  most grateful they are for the living, they cannot fully mourn the dead who lie on <waypoint>. They ask me to ask that you travel there and bring their lost ones home to <destination>."`
 		choice
 			`	"I will bring them home."`
@@ -72,5 +72,16 @@ mission "Efreti: Distress Call 2"
 		label pay
 		`	A ripple of what appears to be dissatisfaction passes through the group, but their leader silences them with a gesture.`
 
-		`	The leader of the turns and speaks to you directly. His eyes never waver from yours even as you wait for the translation. "Many ship skills work father-son to learn. For some families, three generations are lost. We will not try to salvage the body box of our kin, for none can bear to fly it. We offer you title to salvage it and carry our grief far from here."`
+		`	The leader turns and speaks to you directly. His eyes never waver from yours even as you wait for the translation. "Many ship skills work father-son to learn. For some families, three generations are lost. We will not try to salvage the body box of our kin, for none can bear to fly it. We offer you title to salvage it and carry our grief far from here."`
 			accept
+
+	on waypoint
+		conversation
+			`You enter the ship wearing enviornment suits. It's been several days since the crash and Korath ships run hot. This will be an upleasant task in the suits and perhaps impossible without them.`
+			`	While your engineer works on refreshing the atmosphere with outsite air, the rest of the crew gathers the bodies and places them in the fibrous vaguely egg-shapped coffins the Korath provided. As you move them to your cargo bay, you find they stack together like a clutch of eggs in a nest.`
+			`	You return to the Korath ship. In the living quarters you carefully gather all the personal effects you can find and box them for transport. You've no way of knowing if those in the photos are now safely recovering or lying in your hold.`
+			`	The crew makes a last sweep to move debris, both to assess for repairs later and to make sure you haven't missed anyone, or parts of them. You clean and disinfect as best you can and return to your ship for the trip to <destination>`
+
+	on complete
+		conversation
+			``
