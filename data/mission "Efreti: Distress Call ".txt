@@ -5,36 +5,38 @@ mission "Efreti: Distress Call 1"
 	waypoint "Seleptra Nak"
 	destination "Laki Nemparu"
 	landing
-	conversation
-		`The blue flash of Quarg ships is nothing new as you travel Efreti space. Usually that is all you see of the enigmatic aliens. Today, however, you receive an urgent hail as you land.`
-		`	"Salutations Captain of the <ship>. Your most diligent efforts are required lest many families mourn the dead. An Efreti ship was surveying <destination> when surprised by Mereti they were. Their ship crashed on the planet with many dead and they have asked for help to evacuate.`
-		choice
-			"I'll go there immediately."
-				accept
-			"Can't the Quarg respond?"
-				goto Quarg
-			"I don't care about the Korath."
-				goto careless
-		label Quarg
-		`	We fought off the Mereti that attacked them but they had crashed before we could reach them. The gravity on their world requires us to have special equipment and environment suits to navigate wreckage in high gravity. A Human would have few problems.`
-		label careless
-		`	The Quarg is silent for some time. Eventually he responds, "Life is rare and precious across the vastness of space. Look about the Korath worlds and see what remains when one cares not what others suffer."`
-			decline
+
+	on offer
+		conversation
+			`The blue flash of Quarg ships is nothing new as you travel Efreti space. Usually that is all you see of the enigmatic aliens. Today, however, you receive an urgent hail as you land.`
+			`	"Salutations Captain of the <ship>. Your most diligent efforts are required lest many families mourn the dead. An Efreti ship was surveying <destination> when surprised by Mereti they were. Their ship crashed on the planet with many dead and they have asked for help to evacuate.`
+			choice
+				"I'll go there immediately."
+					accept
+				"Can't the Quarg respond?"
+					goto Quarg
+				"I don't care about the Korath."
+					goto careless
+			label Quarg
+			`	We fought off the Mereti that attacked them but they had crashed before we could reach them. The gravity on their world requires us to have special equipment and environment suits to navigate wreckage in high gravity. A Human would have few problems.`
+			label careless
+			`	The Quarg is silent for some time. Eventually he responds, "Life is rare and precious across the vastness of space. Look about the Korath worlds and see what remains when one cares not what others suffer."`
+				decline
 
 	on waypoint
 		conversation
-		`	It takes you some time to find the wreckage. You had expected a beacon of some sort but they are either keeping radio silence to avoid drawing the Mereti or there were no survivors.`
-		`	When you manage to open the hatch, you find yourself staring down a thermal rifle. The Korath shouts something at you and you hold your hands out palms forward. He limps back a few steps but keeps the weapon trained on you. You slowly pull your communicator our and play you ship's recording of the Quarg transmission. When the Korath hears the Quarg's voice they become excited. "Laki Nemparu?" he asks repeatedly. You nod your head and show your palms again.`
-		`	He leads you into the ship, shouting into a communication device that is then picked up on speakers throughout the ship. You can only glance around as you move through the engineering section but it's clear their System Core was destroyed and left them stranded.`
-		`	The living area is a makeshift hospital. You don't see bodies, but it's clear that all the crew are injured to some degree with more than half incapacitated or unconscious. Even if if the ship is spaceworthy, there aren't enough crew to man it.`
-		`	You quickly count the number of surviors and communicate to your guide that you can take them all. He mimics your nodding head gesture and shows you his plams and makes quick cirlcles. You think he is agreeing and wants to hurry. You call your crew over to help move the survivors to the <ship>. Within a couple of hours you are ready to go.`
+			`	It takes you some time to find the wreckage. You had expected a beacon of some sort but they are either keeping radio silence to avoid drawing the Mereti or there were no survivors.`
+			`	When you manage to open the hatch, you find yourself staring down a thermal rifle. The Korath shouts something at you and you hold your hands out palms forward. He limps back a few steps but keeps the weapon trained on you. You slowly pull your communicator our and play you ship's recording of the Quarg transmission. When the Korath hears the Quarg's voice they become excited. "Laki Nemparu?" he asks repeatedly. You nod your head and show your palms again.`
+			`	He leads you into the ship, shouting into a communication device that is then picked up on speakers throughout the ship. You can only glance around as you move through the engineering section but it's clear their System Core was destroyed and left them stranded.`
+			`	The living area is a makeshift hospital. You don't see bodies, but it's clear that all the crew are injured to some degree with more than half incapacitated or unconscious. Even if if the ship is spaceworthy, there aren't enough crew to man it.`
+			`	You quickly count the number of surviors and communicate to your guide that you can take them all. He mimics your nodding head gesture and shows you his plams and makes quick cirlcles. You think he is agreeing and wants to hurry. You call your crew over to help move the survivors to the <ship>. Within a couple of hours you are ready to go.`
 	
 	on complete
 		payment 3000000
 		conversation
-		`	The Efreti commander hails the authorities once you enter the system and they have medical crews waiting when you land. It takes several hours to evacute the injured as doctors or paramedics swarm over them to triage, treat, and prepare for transport. The three who died during the flight are treated with respect and carried off the <ship>.`
-		`	When you make it to the spaceport you find a message from the Quarg. "Bold Human! With profuse thanks we offer you for helping the standed Korath when we could not. The Korath ever mourn the loss of their worlds and from time to time brave the dangers to seek what the can salvage among the ruins and to seek out those where they may one day live again. For the young, this gives them hope, but sometimes they are caught and the Efreti are reminded why they live crushed together in these few worlds."`
-		`	Your communicator notifies you of a payment of <payment>.`
+			`	The Efreti commander hails the authorities once you enter the system and they have medical crews waiting when you land. It takes several hours to evacute the injured as doctors or paramedics swarm over them to triage, treat, and prepare for transport. The three who died during the flight are treated with respect and carried off the <ship>.`
+			`	When you make it to the spaceport you find a message from the Quarg. "Bold Human! With profuse thanks we offer you for helping the standed Korath when we could not. The Korath ever mourn the loss of their worlds and from time to time brave the dangers to seek what the can salvage among the ruins and to seek out those where they may one day live again. For the young, this gives them hope, but sometimes they are caught and the Efreti are reminded why they live crushed together in these few worlds."`
+			`	Your communicator notifies you of a payment of <payment>.`
 
 
 
@@ -50,30 +52,30 @@ mission "Efreti: Distress Call 2"
 		has "Efreti: Distress Call 1: complete"
 
 	on offer
-	conversation
-		`A delgation of Korath approach you somewhat hesitantly in the spaceport. They are dressed in what appears to be much finer clothing that most of the Korath you have met. Certaiinly nothing you would wear to do work in a spaceport. As they make the traditional gesture of greeting, which you return, you are curious both as to what they want and how they will ask.`
-		`	One of them takes a small case out of a pocket and removes a black device that looks like three triangles hooked together. He hisses at it for a moment and then it rises out of his hand. The air around it begins to shimmer and soon a life size hologram of a Quarg appears.`
-		`	"Salutations, far traveller," the Quarg rumbles. "These Korath-Friends are the princes of the clan-company that you have assisted. They thank you for your aid in saving their children and grandchildren. While  most grateful they are for the living, they cannot fully mourn the dead who lie on <waypoint>. They ask me to ask that you travel there and bring their lost ones home to <destination>."`
-		choice
-			`	"I will bring them home."`
-				goto home
-			`	"I will if they pay me."`
-				goto pay
-			`	"I won't risk my ship for the dead."`
-				goto refuse
+		conversation
+			`A delgation of Korath approach you somewhat hesitantly in the spaceport. They are dressed in what appears to be much finer clothing that most of the Korath you have met. Certaiinly nothing you would wear to do work in a spaceport. As they make the traditional gesture of greeting, which you return, you are curious both as to what they want and how they will ask.`
+			`	One of them takes a small case out of a pocket and removes a black device that looks like three triangles hooked together. He hisses at it for a moment and then it rises out of his hand. The air around it begins to shimmer and soon a life size hologram of a Quarg appears.`
+			`	"Salutations, far traveller," the Quarg rumbles. "These Korath-Friends are the princes of the clan-company that you have assisted. They thank you for your aid in saving their children and grandchildren. While  most grateful they are for the living, they cannot fully mourn the dead who lie on <waypoint>. They ask me to ask that you travel there and bring their lost ones home to <destination>."`
+			choice
+				`	"I will bring them home."`
+					goto home
+				`	"I will if they pay me."`
+					goto pay
+				`	"I won't risk my ship for the dead."`
+					goto refuse
 
-		label home
-		`	You hadn't realised how tense the group was until you saw them relax as your words reach them. They seem relieved at your answer.`
+			label home
+			`	You hadn't realised how tense the group was until you saw them relax as your words reach them. They seem relieved at your answer.`
 
-		label refuse
-		`	You see the leader of the group visibly sag as the Quarg translates your words. Two younger Korath bear him up as the group turns and leaves.`
-			decline
+			label refuse
+			`	You see the leader of the group visibly sag as the Quarg translates your words. Two younger Korath bear him up as the group turns and leaves.`
+				decline
 
-		label pay
-		`	A ripple of what appears to be dissatisfaction passes through the group, but their leader silences them with a gesture.`
+			label pay
+			`	A ripple of what appears to be dissatisfaction passes through the group, but their leader silences them with a gesture.`
 
-		`	The leader turns and speaks to you directly. His eyes never waver from yours even as you wait for the translation. "Many ship skills work father-son to learn. For some families, three generations are lost. We will not try to salvage the body box of our kin, for none can bear to fly it. We offer you title to salvage it and carry our grief far from here."`
-			accept
+			`	The leader turns and speaks to you directly. His eyes never waver from yours even as you wait for the translation. "Many ship skills work father-son to learn. For some families, three generations are lost. We will not try to salvage the body box of our kin, for none can bear to fly it. We offer you title to salvage it and carry our grief far from here."`
+				accept
 
 	on waypoint
 		conversation
@@ -85,8 +87,8 @@ mission "Efreti: Distress Call 2"
 	on complete
 		conversation
 			`A crowd pours out of the spaceport when you land. It takes some time for the workers to establish barricades and clear a path so the transports can get to your cargo hold. A team in uniform greetd you formally when you open the hatch. You count the coffins together and show them the boxes of possessions.`
-			`	The officer thanks you and hands you a data chip that vaguely reminds you a license.
-			The crowd has been somber, but when the first coffin leaves your ship, they erupt in a cachophony of barking sounds. Some Korath try to rush forward but are held back by family.`
+			`	The officer thanks you and hands you a data chip that vaguely reminds you of a license.`
+			`The crowd has been somber, but when the first coffin leaves your ship, they erupt in a cachophony of barking sounds. Some Korath try to rush forward but are held back by family.`
 			`	You go back inside your ship rather than intrude on their grief. You slot the data chip into your systems but the information is in Korath. You set it aside and talk to your engineer about the condition of the Korath ship in preparation for salvaging it.`
 
 mission "Efreti: Distress Call 3"
@@ -101,19 +103,20 @@ mission "Efreti: Distress Call 3"
 		conversation
 			`Thanks to your engineer's work the atmosphere on the ship is to Human standards if a bit tropical. Your crew works on repairs and getting familar with the ship. With it's strong hull it appears space worthy but your engineer tells you that you have no shields or battery and just enough fuel to make to it <destination>. If the Mereti attack, you are a sitting duck.`
 			choice
-				(Make a run for it)
-				(Abandon the ship)
+				`(Make a run for it)`
+				`(Abandon the ship)`
 					goto abandon
-				label abandon
-				`	Your crew abandons the Korath ship the elements. One more tragic story amid the ruins of their civilisation.`
-					fail
+			
+			label abandon
+			`	Your crew abandons the Korath ship the elements. One more tragic story amid the ruins of their civilisation.`
+			fail
 
 	on complete
 		conversation
 			`There are no crowds waiting for you when you land. Rather the ground crews seem astonished to see the ship. It takes you some time to arrange for repairs but at least they are familiar with the ship. When you come out you see a pavillion has been set up near the <ship> and small groups of Korath periodically stop by.`
 			choice
-				(Check it out.)
-				(I've got places to be.)
+				`(Check it out.)`
+				`(I've got places to be.)`
 					decline
 				
 			`	The tent is larger than you expected. At the back there is a group of Korath arragned like a choir, but oddly still. A Korath in some kind of robes stands next to a table piled with sweets can cups of some kind of thick drink. As you approach, you realize that the choir is made of holograms. You do a quick mental count and guess that these are the Korath that died on the ship; this is probably some type of memorial. The Korath in robes greets you and presses a cup into your hand. It is fermented and has a sweet and sour taste that leaves you lips and mouth tingling and then numb. They press the sweets on you so you take them. You see a few groups from the spaceport follow the same ritual, though some of them walk up to the "choir" and say something to them. When you finish the food, you take your leave and return to your ship.`
@@ -138,4 +141,4 @@ mission "Efreti: Distress Call 4"
 			`	You approach one of the Quarg in the spaceport. He stops and acknowledges you but doesn't speak. He pauses for a few moments after you make your request but then holds out his hand. He takes the data chip and slots it into a communicator of some sort he then nods to himself and hands you back the chip.`
 			`	You plug the chip into your own device and see two files. On opening the second one your read, "Belonging this ship alien Human. Grateful from those they helped. Stranded ones thank. Grieving ones thank."`
 			`	You store the chip carefully and return to your ship.`
-				fail
+			fail
