@@ -50,9 +50,9 @@ mission "Efreti: Distress Call 1"
 
 mission "Efreti: Distress Call 2"
 	name "Recover the fallen"
-	description "Recover the bodies of the dead Korath on <waypoint> and return them to <destination>."
+	description "Recover the bodies of the dead Korath on <stopovers> and return them to <destination>."
 	source "Laki Nemparu"
-	waypoint "Seleptra Nak"
+	stopover "Seleptra Nak"
 	destination "Karek Fornati"
 	landing
 
@@ -61,9 +61,9 @@ mission "Efreti: Distress Call 2"
 
 	on offer
 		conversation
-			`A delgation of Korath approach you somewhat hesitantly in the spaceport. They are dressed in what appears to be much finer clothing that most of the Korath you have met. Certaiinly nothing you would wear to do work in a spaceport. As they make the traditional gesture of greeting, which you return, you are curious both as to what they want and how they will ask.`
+			`A delgation of Korath approach you somewhat hesitantly in the spaceport. They are dressed in what appears to be much finer clothing that most of the Korath you have met, certainly nothing you would wear to do work in a spaceport. As they make the traditional gesture of greeting, which you return, you are curious both as to what they want and how they will ask.`
 			`	One of them takes a small case out of a pocket and removes a black device that looks like three triangles hooked together. He hisses at it for a moment and then it rises out of his hand. The air around it begins to shimmer and soon a life size hologram of a Quarg appears.`
-			`	"Salutations, far traveller," the Quarg rumbles. "These Korath-Friends are the princes of the clan-company that you have assisted. They thank you for your aid in saving their children and grandchildren. While  most grateful they are for the living, they cannot fully mourn the dead who lie on <waypoint>. They ask me to ask that you travel there and bring their lost ones home to <destination>."`
+			`	"Salutations, far traveller," the Quarg rumbles. "These Korath-Friends are the princes of the clan-company that you have assisted. They thank you for your aid in saving their children and grandchildren. While  most grateful they are for the living, they cannot fully mourn the dead who lie on <stopovers>. They ask me to ask that you travel there and bring their lost ones home to <destination>."`
 			choice
 				`	"I will bring them home."`
 					goto home
@@ -74,6 +74,7 @@ mission "Efreti: Distress Call 2"
 
 			label home
 			`	You hadn't realised how tense the group was until you saw them relax as your words reach them. They seem relieved at your answer.`
+				goto title
 
 			label refuse
 			`	You see the leader of the group visibly sag as the Quarg translates your words. Two younger Korath bear him up as the group turns and leaves.`
@@ -82,10 +83,11 @@ mission "Efreti: Distress Call 2"
 			label pay
 			`	A ripple of what appears to be dissatisfaction passes through the group, but their leader silences them with a gesture.`
 
+			label title
 			`	The leader turns and speaks to you directly. His eyes never waver from yours even as you wait for the translation. "Many ship skills work father-son to learn. For some families, three generations are lost. We will not try to salvage the body box of our kin, for none can bear to fly it. We offer you title to salvage it and carry our grief far from here."`
 				accept
 
-	on waypoint
+	on stopover
 		conversation
 			`You enter the ship wearing enviornment suits. It's been several days since the crash and Korath ships run hot. This will be an upleasant task in the suits and perhaps impossible without them.`
 			`	While your engineer works on refreshing the atmosphere with outsite air, the rest of the crew gathers the bodies and places them in the fibrous, vaguely egg-shapped coffins the Korath provided. As you move them to your cargo bay, you find they stack together like a clutch of eggs in a nest.`
@@ -103,15 +105,20 @@ mission "Efreti: Distress Call 3"
 	name "Salvage ship"
 	description "Salvage the Korath ship."
 	source "Karek Fornati"
-	waypoint "Seleptra Nak"
+	stopover "Seleptra Nak"
 	destination "Karek Fornati"
 	passengers 66
 
-	on waypoint
+	to offer
+		has "Efreti: Distress Call 2: done"
+
+	on stopover
 		conversation
 			`Thanks to your engineer's work the atmosphere on the ship is to Human standards if a bit tropical. Your crew works on repairs and getting familar with the ship. With it's strong hull it appears space worthy but your engineer tells you that you have no shields or battery and just enough fuel to make to it <destination>. If the Mereti attack, you are a sitting duck.`
 			choice
 				`(Make a run for it)`
+					#give ship
+					launch
 				`(Abandon the ship)`
 					goto abandon
 			
@@ -136,6 +143,8 @@ mission "Efreti: Distress Call 4"
 	invisible
 	landing
 
+	to offer
+		has "Efreti: Distress Call 3: done"
 	on offer
 		conversation
 			`The Quarg have translated the Korath language for you in the past. Would you like to see if they will tell you what the data chip says?`
