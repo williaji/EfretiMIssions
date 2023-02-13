@@ -96,7 +96,7 @@ mission "Efreti: Distress Call 2"
 
 	on complete
 		conversation
-			`A crowd pours out of the spaceport when you land. It takes some time for the workers to establish barricades and clear a path so the transports can get to your cargo hold. A team in uniform greetd you formally when you open the hatch. You count the coffins together and show them the boxes of possessions.`
+			`A crowd pours out of the spaceport when you land. It takes some time for the workers to establish barricades and clear a path so the transports can get to your cargo hold. A team in uniform greets you formally when you open the hatch. You count the coffins together and show them the boxes of possessions.`
 			`	The officer thanks you and hands you a data chip that vaguely reminds you of a license.`
 			`The crowd has been somber, but when the first coffin leaves your ship, they erupt in a cachophony of barking sounds. Some Korath try to rush forward but are held back by family.`
 			`	You go back inside your ship rather than intrude on their grief. You slot the data chip into your systems but the information is in Korath. You set it aside and talk to your engineer about the condition of the Korath ship in preparation for salvaging it.`
@@ -107,6 +107,7 @@ mission "Efreti: Distress Call 3"
 	source "Karek Fornati"
 	stopover "Seleptra Nak"
 	destination "Karek Fornati"
+	landing
 	passengers 66
 
 	to offer
@@ -117,14 +118,33 @@ mission "Efreti: Distress Call 3"
 			`Thanks to your engineer's work the atmosphere on the ship is to Human standards if a bit tropical. Your crew works on repairs and getting familar with the ship. With it's strong hull it appears space worthy but your engineer tells you that you have no shields or battery and just enough fuel to make to it <destination>. If the Mereti attack, you are a sitting duck.`
 			choice
 				`(Make a run for it)`
-					#give ship
-					launch
+					goto runforit
 				`(Abandon the ship)`
 					goto abandon
 			
 			label abandon
 			`	Your crew abandons the Korath ship the elements. One more tragic story amid the ruins of their civilisation.`
-			fail
+			action
+				fail
+			launch
+			
+			label runforit
+			action
+				give ship "Charm-Shallop" "Sad Memories"
+					outfits
+						"Warder Anti-Missile"
+						"Banisher Grav-Turret"
+		
+						"Double Plasma Core"
+						"Generator (Candle Class)"
+						"Large Heat Shunt"
+						"Fuel Processor"
+						"Thermal Repeater Rifle" 66
+		
+						"Gaktem GP Hybrid Thruster"
+						"Gaktem GP Hybrid Steering"
+						"Scram Drive"
+			launch
 
 	on complete
 		conversation
