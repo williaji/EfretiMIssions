@@ -98,8 +98,23 @@ mission "Efreti: Distress Call 2"
 		conversation
 			`A crowd pours out of the spaceport when you land. It takes some time for the workers to establish barricades and clear a path so the transports can get to your cargo hold. A team in uniform greets you formally when you open the hatch. You count the coffins together and show them the boxes of possessions.`
 			`	The officer thanks you and hands you a data chip that vaguely reminds you of a license.`
-			`The crowd has been somber, but when the first coffin leaves your ship, they erupt in a cachophony of barking sounds. Some Korath try to rush forward but are held back by family.`
+			`	The crowd has been somber, but when the first coffin leaves your ship, they erupt in a cachophony of barking sounds. Some Korath try to rush forward but are held back by family.`
 			`	You go back inside your ship rather than intrude on their grief. You slot the data chip into your systems but the information is in Korath. You set it aside and talk to your engineer about the condition of the Korath ship in preparation for salvaging it.`
+
+ship "Charm-Shallop" "Charm-Shallop Distressed"
+	outfits
+		"Warder Anti-Missile"
+		"Banisher Grav-Turret"
+		
+		"Double Plasma Core"
+		"Generator (Candle Class)"
+		"Large Heat Shunt"
+		"Fuel Processor"
+		"Thermal Repeater Rifle" 66
+		
+		"Gaktem GP Hybrid Thruster"
+		"Gaktem GP Hybrid Steering"
+		"Scram Drive"
 
 mission "Efreti: Distress Call 3"
 	name "Salvage ship"
@@ -109,6 +124,14 @@ mission "Efreti: Distress Call 3"
 	destination "Karek Fornati"
 	landing
 	passengers 66
+
+	npc
+		system "Seketra"
+		fleet "Small Kor Mereti" 2
+		government "Kor Mereti"
+		personality	
+			staying
+
 
 	to offer
 		has "Efreti: Distress Call 2: done"
@@ -126,25 +149,11 @@ mission "Efreti: Distress Call 3"
 			`	Your crew abandons the Korath ship the elements. One more tragic story amid the ruins of their civilisation.`
 			action
 				fail
-			launch
 			
 			label runforit
 			action
-				give ship "Charm-Shallop" "Sad Memories"
-					outfits
-						"Warder Anti-Missile"
-						"Banisher Grav-Turret"
-		
-						"Double Plasma Core"
-						"Generator (Candle Class)"
-						"Large Heat Shunt"
-						"Fuel Processor"
-						"Thermal Repeater Rifle" 66
-		
-						"Gaktem GP Hybrid Thruster"
-						"Gaktem GP Hybrid Steering"
-						"Scram Drive"
-			launch
+				give ship "Charm-Shallop Distressed" "Sad Memories"
+					
 
 	on complete
 		conversation
