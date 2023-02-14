@@ -4,8 +4,9 @@ mission "Efreti: Distress Call 1"
 	source "Karek Fornati"
 	stopover "Seleptra Nak"
 	destination "Laki Nemparu"
+	passengers 40
 	landing
-	#bunks
+	blocked "The Quarg commander informs you that you that at least <bunks> Korath need evacuation."
 
 	on offer
 		conversation
@@ -124,6 +125,7 @@ mission "Efreti: Distress Call 3"
 	destination "Karek Fornati"
 	landing
 	passengers 66
+	blocked "You need to be able to carry <bunks> additional crew to man the ship."
 
 	npc
 		system "Seketra"
