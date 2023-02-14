@@ -155,6 +155,9 @@ mission "Efreti: Distress Call 3"
 			label runforit
 			action
 				give ship "Charm-Shallop Distressed" "Sad Memories"
+			`	Your crew take their stations as you prepare to evade Mereti patrols on your way to <destination>.`
+				launch
+	
 					
 
 	on complete
