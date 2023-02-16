@@ -11,6 +11,10 @@ mission "Efreti: Distress Call 1"
 	landing
 	blocked "A Quarg ship broadcasts that they need a ship with at least <bunks> bunks for an emergency evacuation."
 
+	to offer
+		not "event: wanderers: kor mereti friendly"
+		has "First Contact: Karek Fornati: offered"
+		
 	on offer
 		conversation
 			`The blue flash of Quarg ships is nothing new as you travel Efreti space. Usually that is all you see of the enigmatic aliens. Today, however, you receive an urgent hail as you land.`
